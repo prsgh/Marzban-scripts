@@ -114,12 +114,12 @@ install_package () {
     fi
 }
 
-#install_docker() {
-#    # Install Docker and Docker Compose using the official installation script
-#    colorized_echo blue "Installing Docker"
-#    curl -fsSL https://get.docker.com | sh
-#    colorized_echo green "Docker installed successfully"
-#}
+install_docker() {
+    # Install Docker and Docker Compose using the official installation script
+    colorized_echo blue "Installing Docker"
+    curl -fsSL https://get.docker.com | sh
+    colorized_echo green "Docker installed successfully"
+}
 
 install_marzban_script() {
     FETCH_REPO="Gozargah/Marzban-scripts"
@@ -267,7 +267,7 @@ install_command() {
         install_package curl
     fi
     if ! command -v docker >/dev/null 2>&1; then
-        install_docker
+        #install_docker
     fi
     detect_compose
     install_marzban_script
